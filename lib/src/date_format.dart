@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'i18n_model.dart';
 
 /// Outputs year as four digits
@@ -271,7 +273,7 @@ String formatDate(DateTime date, List<String> formats, LocaleType locale) {
     }
   }
 
-  final sb = new StringBuffer();
+  final sb =  StringBuffer();
 
   for (String format in formats) {
     if (format == yyyy) {
@@ -303,7 +305,7 @@ String formatDate(DateTime date, List<String> formats, LocaleType locale) {
     } else if (format == D) {
       String day = i18nObjInLocaleLookup(locale, 'day', date.weekday - 1);
       if (locale == LocaleType.ko) {
-        day = "($day)";
+        day = '($day)';
       }
       sb.write(day);
     } else if (format == HH) {
@@ -317,7 +319,7 @@ String formatDate(DateTime date, List<String> formats, LocaleType locale) {
     } else if (format == am) {
       sb.write(date.hour < 12
           ? i18nObjInLocale(locale)['am']
-          : i18nObjInLocale(locale)['pm']);
+          : i18nObjInLocale(locale)['pm'],);
     } else if (format == nn) {
       sb.write(digits(date.minute, 2));
     } else if (format == n) {
@@ -359,8 +361,8 @@ String formatDate(DateTime date, List<String> formats, LocaleType locale) {
 }
 
 String digits(int value, int length) {
-  return '$value'.padLeft(length, "0");
+  return '$value'.padLeft(length, '0');
 }
 
 int dayInYear(DateTime date) =>
-    date.difference(new DateTime(date.year, 1, 1)).inDays;
+    date.difference(DateTime(date.year, 1, 1)).inDays;

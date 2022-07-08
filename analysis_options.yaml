@@ -1,0 +1,20 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    - avoid_print
+    - prefer_single_quotes
+    - require_trailing_commas
+    - cancel_subscriptions
+    - always_declare_return_types
+    - comment_references
+    - library_private_types_in_public_api
+    - one_member_abstracts
+    - only_throw_errors
+    - no_leading_underscores_for_library_prefixes
+  
+analyzer:
+  exclude:
+    - lib/**.g.dart
+    - lib/**.freezed.dart
+    - lib/**.config.dart
